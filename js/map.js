@@ -62,28 +62,28 @@ function main() {
                 gruene: function() {
                     sublayers[0].set({
                         sql: "SELECT * FROM btw13",
-                        cartocss: '#btw13{polygon-fill:#FFFFB2;polygon-opacity:.8;line-color:#FFF;line-width:1;line-opacity:1}#btw13 [grune<=12.2]{polygon-fill:#5cb813;polygon-opacity:1}#btw13 [grune<=10]{polygon-fill:#5cb813;polygon-opacity:.8}#btw13 [grune<=9]{polygon-fill:#5cb813;polygon-opacity:.6}#btw13 [grune<=8.1]{polygon-fill:#5cb813;polygon-opacity:.4}#btw13 [grune<=6.7]{polygon-fill:#5cb813;polygon-opacity:.2}'
+                        cartocss: '#btw13{polygon-fill:#FFFFB2;polygon-opacity:.8;line-color:#FFF;line-width:2;line-opacity:1}#btw13 [grune<=12.2]{polygon-fill:#5cb813;polygon-opacity:1}#btw13 [grune<=10]{polygon-fill:#5cb813;polygon-opacity:.8}#btw13 [grune<=9]{polygon-fill:#5cb813;polygon-opacity:.6}#btw13 [grune<=8.1]{polygon-fill:#5cb813;polygon-opacity:.4}#btw13 [grune<=6.7]{polygon-fill:#5cb813;polygon-opacity:.2}'
                     });
                     return true;
                 },
                 linke: function() {
                     sublayers[0].set({
                         sql: "SELECT * FROM btw13",
-                        cartocss: '#btw13{polygon-fill:#FFFFB2;polygon-opacity:.8;line-color:#FFF;line-width:1;line-opacity:1}#btw13 [die_linke<=6.3]{polygon-fill:#540fc6;polygon-opacity:1}#btw13 [die_linke<=5.2]{polygon-fill:#540fc6;polygon-opacity:.8}#btw13 [die_linke<=4.6]{polygon-fill:#540fc6;polygon-opacity:.6}#btw13 [die_linke<=4.1]{polygon-fill:#540fc6;polygon-opacity:.4}#btw13 [die_linke<=3.6]{polygon-fill:#540fc6;polygon-opacity:.2}'
+                        cartocss: '#btw13{polygon-fill:#FFFFB2;polygon-opacity:.8;line-color:#FFF;line-width:2;line-opacity:1}#btw13 [die_linke<=6.3]{polygon-fill:#540fc6;polygon-opacity:1}#btw13 [die_linke<=5.2]{polygon-fill:#540fc6;polygon-opacity:.8}#btw13 [die_linke<=4.6]{polygon-fill:#540fc6;polygon-opacity:.6}#btw13 [die_linke<=4.1]{polygon-fill:#540fc6;polygon-opacity:.4}#btw13 [die_linke<=3.6]{polygon-fill:#540fc6;polygon-opacity:.2}'
                     });
                     return true;
                 },
                 fdp: function() {
                     sublayers[0].set({
                         sql: "SELECT * FROM btw13",
-                        cartocss: '#btw13{polygon-fill:#FFFFB2;polygon-opacity:.8;line-color:#FFF;line-width:1;line-opacity:1}#btw13 [fdp<=10.1]{polygon-fill:#ecbd00;polygon-opacity:1}#btw13 [fdp<=8]{polygon-fill:#ecbd00;polygon-opacity:.8}#btw13 [fdp<=7]{polygon-fill:#ecbd00;polygon-opacity:.6}#btw13 [fdp<=6.2]{polygon-fill:#ecbd00;polygon-opacity:.4}#btw13 [fdp<=5.4]{polygon-fill:#ecbd00;polygon-opacity:.2}'
+                        cartocss: '#btw13{polygon-fill:#FFFFB2;polygon-opacity:.8;line-color:#FFF;line-width:2;line-opacity:1}#btw13 [fdp<=10.1]{polygon-fill:#ecbd00;polygon-opacity:1}#btw13 [fdp<=8]{polygon-fill:#ecbd00;polygon-opacity:.8}#btw13 [fdp<=7]{polygon-fill:#ecbd00;polygon-opacity:.6}#btw13 [fdp<=6.2]{polygon-fill:#ecbd00;polygon-opacity:.4}#btw13 [fdp<=5.4]{polygon-fill:#ecbd00;polygon-opacity:.2}'
                     });
                     return true;
                 },
                 afd: function() {
                     sublayers[0].set({
                         sql: "SELECT * FROM btw13",
-                        cartocss: '#btw13{polygon-fill:#FFFFB2;polygon-opacity:.8;line-color:#FFF;line-width:1;line-opacity:1}#btw13 [afd<=7.5]{polygon-fill:#00baff;polygon-opacity:1}#btw13 [afd<=6.4]{polygon-fill:#00baff;polygon-opacity:.8}#btw13 [afd<=5.8]{polygon-fill:#00baff;polygon-opacity:.6}#btw13 [afd<=5]{polygon-fill:#00baff;polygon-opacity:.4}#btw13 [afd<=4.1]{polygon-fill:#00baff;polygon-opacity:.2}'
+                        cartocss: '#btw13{polygon-fill:#FFFFB2;polygon-opacity:.8;line-color:#FFF;line-width:2;line-opacity:1}#btw13 [afd<=7.5]{polygon-fill:#00baff;polygon-opacity:1}#btw13 [afd<=6.4]{polygon-fill:#00baff;polygon-opacity:.8}#btw13 [afd<=5.8]{polygon-fill:#00baff;polygon-opacity:.6}#btw13 [afd<=5]{polygon-fill:#00baff;polygon-opacity:.4}#btw13 [afd<=4.1]{polygon-fill:#00baff;polygon-opacity:.2}'
                     });
                     return true;
                 },
