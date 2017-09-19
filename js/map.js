@@ -9,6 +9,7 @@ function main() {
         layer_selector: false,
     }).setView([49.2127168, 9.3962733], 10);
 
+    // Zoomfunktion komplett deaktivieren
     map_object.touchZoom.disable();
     map_object.doubleClickZoom.disable();
     map_object.scrollWheelZoom.disable();
