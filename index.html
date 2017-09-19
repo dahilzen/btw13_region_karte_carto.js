@@ -9,13 +9,18 @@
 
   <link rel="stylesheet" href="https://cartodb-libs.global.ssl.fastly.net/cartodb.js/v3/3.15/themes/css/cartodb.css" />
   <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
-  <link rel="stylesheet" type="text/css" href="css/styles_info.css">
+  <link rel="stylesheet" type="text/css" href="css/styles.css">
 </head>
 
 <body>
 
   <!-- Container für die Karte -->
   <div id="map"></div>
+
+  <!--   stimme-Logo einblenden -->
+  <div id="stimme-logo">
+    <a href="http://www.stimme.de/"><img src="http://static1.heilbronnerstimme.de/stupl/pics/layout/2017/logo.png" width="75px"></a>
+  </div>
 
   <!-- Dropdown-Menü zur Auswahl der Parteien -->
   <div class="dropdown">
@@ -31,6 +36,7 @@
     </ul>
   </div>
 
+  <!-- Infofenster anlegen -->
   <div id="infowindow_template">
     <div class="cartodb-popup-content">
       <div class="content">
@@ -68,7 +74,7 @@
   <script src="js/jquery.js"></script>
   <script src="js/bootstrap.js"></script>
   <script src="js/cartodb.js"></script>
-  <script src="js/map_info.js"></script>
+  <script src="js/map.js"></script>
 
 </body>
 

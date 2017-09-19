@@ -14,13 +14,15 @@ function main() {
     // Leeren TileLayer hinzufügen
 
     L.tileLayer('', {
-        attribution: 'alles klar'
+        attribution: 'Recherche und Code: <a href="https://www.twitter.com/dahilzen">David Hilzendegen</a> | Daten: <a href="http://www.statistik-bw.de/">Statistisches Landesamt</a>'
     }).addTo(map_object);
 
     // cartodb createLayer
-    cartodb.createLayer(map_object, 'https://dahilzen.carto.com/api/v2/viz/4c5d2882-9992-11e7-9617-0ee462b5436c/viz.json', {
+    cartodb.createLayer(map_object, 'https://dahilzen.carto.com/api/v2/viz/acee326d-57cb-4d82-a854-bc144b2ef8d6/viz.json', {
             legends: false,
-            cartodb_logo: false
+            cartodb_logo: false,
+            mobile_layout: true,
+            force_mobile: $(window).width() < 620
         })
         .addTo(map_object)
         .on('done', function(layer) {
@@ -30,12 +32,12 @@ function main() {
             // add sublayers & change the query for the first layer  
             var subLayerOptions = {
                 sql: "SELECT * FROM btw13",
-                cartocss: '#btw13{polygon-fill:#FFFFB2;polygon-opacity:0.8;line-color:#FFF;line-width:0.5;line-opacity:1}#btw13 [ cdu <= 61.3]{polygon-fill:#000;polygon-opacity:1}#btw13 [ cdu <= 52.1]{polygon-fill:#000;polygon-opacity:0.8}#btw13 [ cdu <= 48.4]{polygon-fill:#000;polygon-opacity:0.6}#btw13 [ cdu <= 46.2]{polygon-fill:#000;polygon-opacity:0.4}#btw13 [ cdu <= 43.9]{polygon-fill:#000;polygon-opacity:0.2}'
+                cartocss: '#btw13{polygon-fill:#FFFFB2;polygon-opacity:0.8;line-color:#FFF;line-width:1;line-opacity:1}#btw13 [ cdu <= 61.3]{polygon-fill:#000;polygon-opacity:1}#btw13 [ cdu <= 52.1]{polygon-fill:#000;polygon-opacity:0.8}#btw13 [ cdu <= 48.4]{polygon-fill:#000;polygon-opacity:0.6}#btw13 [ cdu <= 46.2]{polygon-fill:#000;polygon-opacity:0.4}#btw13 [ cdu <= 43.9]{polygon-fill:#000;polygon-opacity:0.2}'
             }
 
             var sublayer = layer.getSubLayer(0);
 
-            //sublayer.infowindow.set('template', $('#infowindow_template').html());
+            sublayer.infowindow.set('template', $('#infowindow_template').html());
 
             sublayer.set(subLayerOptions);
 
@@ -46,46 +48,47 @@ function main() {
                 cdu: function() {
                     sublayers[0].set({
                         sql: "SELECT * FROM btw13",
-                        cartocss: '#btw13{polygon-fill:#FFFFB2;polygon-opacity:0.8;line-color:#FFF;line-width:0.5;line-opacity:1}#btw13 [ cdu <= 61.3]{polygon-fill:#000;polygon-opacity:1}#btw13 [ cdu <= 52.1]{polygon-fill:#000;polygon-opacity:0.8}#btw13 [ cdu <= 48.4]{polygon-fill:#000;polygon-opacity:0.6}#btw13 [ cdu <= 46.2]{polygon-fill:#000;polygon-opacity:0.4}#btw13 [ cdu <= 43.9]{polygon-fill:#000;polygon-opacity:0.2}'
+                        cartocss: '#btw13{polygon-fill:#FFFFB2;polygon-opacity:0.8;line-color:#FFF;line-width:1;line-opacity:1}#btw13 [ cdu <= 61.3]{polygon-fill:#000;polygon-opacity:1}#btw13 [ cdu <= 52.1]{polygon-fill:#000;polygon-opacity:0.8}#btw13 [ cdu <= 48.4]{polygon-fill:#000;polygon-opacity:0.6}#btw13 [ cdu <= 46.2]{polygon-fill:#000;polygon-opacity:0.4}#btw13 [ cdu <= 43.9]{polygon-fill:#000;polygon-opacity:0.2}'
                     });
                     return true;
                 },
                 spd: function() {
                     sublayers[0].set({
                         sql: "SELECT * FROM btw13",
-                        cartocss: '#btw13{polygon-fill:#FFFFB2;polygon-opacity:0.8;line-color:#FFF;line-width:0.5;line-opacity:1}#btw13 [ spd <= 26.4]{polygon-fill:#B81609;polygon-opacity:1}#btw13 [ spd <= 22.6]{polygon-fill:#B81609;polygon-opacity:0.8}#btw13 [ spd <= 20.9]{polygon-fill:#B81609;polygon-opacity:0.6}#btw13 [ spd <= 19.6]{polygon-fill:#B81609;polygon-opacity:0.4}#btw13 [ spd <= 18]{polygon-fill:#B81609;polygon-opacity:0.2}'
+                        cartocss: '#btw13{polygon-fill:#FFFFB2;polygon-opacity:0.8;line-color:#FFF;line-width: 1;line-opacity:1}#btw13 [ spd <= 26.4]{polygon-fill:#B81609;polygon-opacity:1}#btw13 [ spd <= 22.6]{polygon-fill:#B81609;polygon-opacity:0.8}#btw13 [ spd <= 20.9]{polygon-fill:#B81609;polygon-opacity:0.6}#btw13 [ spd <= 19.6]{polygon-fill:#B81609;polygon-opacity:0.4}#btw13 [ spd <= 18]{polygon-fill:#B81609;polygon-opacity:0.2}'
                     });
                     return true;
                 },
                 gruene: function() {
                     sublayers[0].set({
                         sql: "SELECT * FROM btw13",
-                        cartocss: '#btw13{polygon-fill:#FFFFB2;polygon-opacity:0.8;line-color:#FFF;line-width:0.5;line-opacity:1}#btw13 [ grune <= 12.2]{polygon-fill:#229A00;polygon-opacity:1}#btw13 [ grune <= 10]{polygon-fill:#229A00;polygon-opacity:0.8}#btw13 [ grune <= 9]{polygon-fill:#229A00;polygon-opacity:0.6}#btw13 [ grune <= 8.1]{polygon-fill:#229A00;polygon-opacity:0.4}#btw13 [ grune <= 6.7]{polygon-fill:#229A00;polygon-opacity:0.2}'
+                        cartocss: '#btw13{polygon-fill:#FFFFB2;polygon-opacity:0.8;line-color:#FFF;line-width:1;line-opacity:1}#btw13 [ grune <= 12.2]{polygon-fill:#229A00;polygon-opacity:1}#btw13 [ grune <= 10]{polygon-fill:#229A00;polygon-opacity:0.8}#btw13 [ grune <= 9]{polygon-fill:#229A00;polygon-opacity:0.6}#btw13 [ grune <= 8.1]{polygon-fill:#229A00;polygon-opacity:0.4}#btw13 [ grune <= 6.7]{polygon-fill:#229A00;polygon-opacity:0.2}'
                     });
                     return true;
                 },
                 linke: function() {
                     sublayers[0].set({
                         sql: "SELECT * FROM btw13",
-                        cartocss: '#btw13{polygon-fill:#FFFFB2;polygon-opacity:0.8;line-color:#FFF;line-width:0.5;line-opacity:1}#btw13 [ grune <= 12.2]{polygon-fill:#7B00B4;polygon-opacity:1}#btw13 [ grune <= 10]{polygon-fill:#7B00B4;polygon-opacity:0.8}#btw13 [ grune <= 9]{polygon-fill:#7B00B4;polygon-opacity:0.6}#btw13 [ grune <= 8.1]{polygon-fill:#7B00B4;polygon-opacity:0.4}#btw13 [ grune <= 6.7]{polygon-fill:#7B00B4;polygon-opacity:0.2}'
+                        cartocss: '#btw13{polygon-fill:#FFFFB2;polygon-opacity:0.8;line-color:#FFF;line-width:1;line-opacity:1}#btw13 [ grune <= 12.2]{polygon-fill:#7B00B4;polygon-opacity:1}#btw13 [ grune <= 10]{polygon-fill:#7B00B4;polygon-opacity:0.8}#btw13 [ grune <= 9]{polygon-fill:#7B00B4;polygon-opacity:0.6}#btw13 [ grune <= 8.1]{polygon-fill:#7B00B4;polygon-opacity:0.4}#btw13 [ grune <= 6.7]{polygon-fill:#7B00B4;polygon-opacity:0.2}'
                     });
                     return true;
                 },
                 fdp: function() {
                     sublayers[0].set({
                         sql: "SELECT * FROM btw13",
-                        cartocss: '#btw13{polygon-fill:#FFFFB2;polygon-opacity:0.8;line-color:#FFF;line-width:0.5;line-opacity:1}#btw13 [ grune <= 12.2]{polygon-fill:#F60;polygon-opacity:1}#btw13 [ grune <= 10]{polygon-fill:#F60;polygon-opacity:0.8}#btw13 [ grune <= 9]{polygon-fill:#F60;polygon-opacity:0.6}#btw13 [ grune <= 8.1]{polygon-fill:#F60;polygon-opacity:0.4}#btw13 [ grune <= 6.7]{polygon-fill:#F60;polygon-opacity:0.2}'
+                        cartocss: '#btw13{polygon-fill:#FFFFB2;polygon-opacity:0.8;line-color:#FFF;line-width:1;line-opacity:1}#btw13 [ grune <= 12.2]{polygon-fill:#F60;polygon-opacity:1}#btw13 [ grune <= 10]{polygon-fill:#F60;polygon-opacity:0.8}#btw13 [ grune <= 9]{polygon-fill:#F60;polygon-opacity:0.6}#btw13 [ grune <= 8.1]{polygon-fill:#F60;polygon-opacity:0.4}#btw13 [ grune <= 6.7]{polygon-fill:#F60;polygon-opacity:0.2}'
                     });
                     return true;
                 },
                 afd: function() {
                     sublayers[0].set({
                         sql: "SELECT * FROM btw13",
-                        cartocss: '#btw13{polygon-fill:#FFFFB2;polygon-opacity:0.8;line-color:#FFF;line-width:0.5;line-opacity:1}#btw13 [ afd <= 7.5]{polygon-fill:#3E7BB6;polygon-opacity:1,}#btw13 [ afd <= 6.4]{polygon-fill:#3E7BB6;polygon-opacity:0.8,}#btw13 [ afd <= 5.8]{polygon-fill:#3E7BB6;polygon-opacity:0.6,}#btw13 [ afd <= 5]{polygon-fill:#3E7BB6;polygon-opacity:0.4,}#btw13 [ afd <= 4.1]{polygon-fill:#3E7BB6;polygon-opacity:0.2,}'
+                        cartocss: '#btw13{polygon-fill:#FFFFB2;polygon-opacity:0.8;line-color:#FFF;line-width:1;line-opacity:1}#btw13 [ afd <= 7.5]{polygon-fill:#3E7BB6;polygon-opacity:1,}#btw13 [ afd <= 6.4]{polygon-fill:#3E7BB6;polygon-opacity:0.8,}#btw13 [ afd <= 5.8]{polygon-fill:#3E7BB6;polygon-opacity:0.6,}#btw13 [ afd <= 5]{polygon-fill:#3E7BB6;polygon-opacity:0.4,}#btw13 [ afd <= 4.1]{polygon-fill:#3E7BB6;polygon-opacity:0.2,}'
                     });
                     return true;
                 },
             }
+
             $('.button').click(function() {
                 $('.button').removeClass('selected');
                 $(this).addClass('selected');

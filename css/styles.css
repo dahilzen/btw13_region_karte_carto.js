@@ -1,5 +1,4 @@
-html, body, #map {
-  font-family: "Open Sans", Sans-Serif !important;
+html, body #map {
   width: 100%;
   height: 600px;
   padding: 0;
@@ -7,90 +6,7 @@ html, body, #map {
   background: white;
 }
 
-
-
-.cartodb-infowindow {
-  margin-top: 2px;
-  position: absolute;
-  z-index: 12;
-  display: block;
-  left: 5px !important;
-  top: 40px !important;
-  margin-bottom: 0px;
-  visibility: visible;
-  opacity: 1;
-  height: 190px !important;
-  text-align: center;
-}
-
-.cartodb-popup-close-button {
-  display: none !important;
-}
-
-.cartodb-popup-tip-container {
-  display: none !important;
-}
-
-.cartodb-popup {
-  position: absolute;
-  border-radius: 0px !important;
-  box-shadow: 0 0 0 0px rgba(0, 0, 0, .0) !important;
-  width: 220px !important;
-  height: 190px !important;
-  z-index: 12;
-}
-
-.cartodb-popup-content-wrapper {
-  height: 190px !important;
-  padding: 0px !important;
-}
-
-.cartodb-popup-content {
-  height: 190px !important;
-  max-height: 190px !important;
-  text-align: center;
-  padding-top: 50px;
-}
-
-.cartodb-popup-content.jspScrollable {
-  height: 190px !important;
-  max-height: 190px !important;
-}
-
-.jspContainer {
-  position: absolute;
-  height: 190px !important;
-  background-color: white;
-  padding-left: 15px;
-  padding-right: 15px;
-}
-
-h2 {
-  color: black !important;
-}
-
-hr {
-  margin-top: 5px;
-  margin-bottom: 5px;
-}
-
-.info {
-  text-align: center;
-}
-.info-gemeinde {
-  padding-top: 10px;
-}
-
-.info-ergebnis {
-  font-weight: bold;
-}
-
-.info-tabelle {
-  text-align: center;
-  width: 95%;
-}
-
-.table .btn, .btn-primary {
+.btn, .btn-primary {
   color: black !important;
   background-color: white !important;
   width: 220px;
@@ -98,6 +14,25 @@ hr {
   left: 5px;
   top: 15px;
   z-index: 30 !important;
+}
+
+.dropdown-menu {
+  width: 220px;
+}
+
+h2 {
+  color: black !important;
+  line-height: 1 !important;
+}
+
+hr {
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+table {
+  table-layout: fixed;
+  width: 80%;
 }
 
 .dropdown {
@@ -116,6 +51,36 @@ hr {
   position: absolute;
 }
 
-td {
-  width: 80px;
+.cartodb-infowindow {
+  position: absolute !important;
+  left: 5px !important;
+  top: 40px !important;
+  background-color: white !important;
+  opacity: 1 !important;
+  height: auto !important;
+  max-height: 230px !important;
+  min-height: 190px !important;
+  width: 220px !important;
+  text-align: center !important;
+  z-index: 12 !important;
+  border-radius: 4px !important;
+}
+
+.cartodb-popup-content {
+  margin-top: 5px;
+}
+
+.content {
+  -moz-hyphens: auto;
+  -o-hyphens: auto;
+  -webkit-hyphens: auto;
+  -ms-hyphens: auto;
+  hyphens: auto;
+}
+
+#stimme-logo {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  z-index: 50;
 }
