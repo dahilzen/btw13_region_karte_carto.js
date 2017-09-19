@@ -48,14 +48,14 @@ function main() {
                 cdu: function() {
                     sublayers[0].set({
                         sql: "SELECT * FROM btw13",
-                        cartocss: '#btw13{polygon-fill:#FFFFB2;polygon-opacity:0.8;line-color:#FFF;line-width:1;line-opacity:1}#btw13 [ cdu <= 61.3]{polygon-fill:#000;polygon-opacity:1}#btw13 [ cdu <= 52.1]{polygon-fill:#000;polygon-opacity:0.8}#btw13 [ cdu <= 48.4]{polygon-fill:#000;polygon-opacity:0.6}#btw13 [ cdu <= 46.2]{polygon-fill:#000;polygon-opacity:0.4}#btw13 [ cdu <= 43.9]{polygon-fill:#000;polygon-opacity:0.2}'
+                        cartocss: '#btw13{polygon-fill:#FFFFB2;polygon-opacity:0.8;line-color:#FFF;line-width:2;line-opacity:1}#btw13 [ cdu <= 61.3]{polygon-fill:#000;polygon-opacity:1}#btw13 [ cdu <= 52.1]{polygon-fill:#000;polygon-opacity:0.8}#btw13 [ cdu <= 48.4]{polygon-fill:#000;polygon-opacity:0.6}#btw13 [ cdu <= 46.2]{polygon-fill:#000;polygon-opacity:0.4}#btw13 [ cdu <= 43.9]{polygon-fill:#000;polygon-opacity:0.2}'
                     });
                     return true;
                 },
                 spd: function() {
                     sublayers[0].set({
                         sql: "SELECT * FROM btw13",
-                        cartocss: '#btw13{polygon-fill:#FFFFB2;polygon-opacity:0.8;line-color:#FFF;line-width:1;line-opacity:1}#btw13 [ spd <= 26.4]{polygon-fill:#eb0000;polygon-opacity:1}#btw13 [ spd <= 22.6]{polygon-fill:#eb0000;polygon-opacity:0.8}#btw13 [ spd <= 20.9]{polygon-fill:#eb0000;polygon-opacity:0.6}#btw13 [ spd <= 19.6]{polygon-fill:#eb0000;polygon-opacity:0.4}#btw13 [ spd <= 18]{polygon-fill:#eb0000;polygon-opacity:0.2}'
+                        cartocss: '#btw13{polygon-fill:#FFFFB2;polygon-opacity:0.8;line-color:#FFF;line-width:2;line-opacity:1}#btw13 [ spd <= 26.4]{polygon-fill:#eb0000;polygon-opacity:1}#btw13 [ spd <= 22.6]{polygon-fill:#eb0000;polygon-opacity:0.8}#btw13 [ spd <= 20.9]{polygon-fill:#eb0000;polygon-opacity:0.6}#btw13 [ spd <= 19.6]{polygon-fill:#eb0000;polygon-opacity:0.4}#btw13 [ spd <= 18]{polygon-fill:#eb0000;polygon-opacity:0.2}'
                     });
                     return true;
                 },
