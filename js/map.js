@@ -6,8 +6,13 @@ function main() {
         zoomControl: false,
         attributionControl: false,
         legends: false,
-        layer_selector: true,
+        layer_selector: false,
     }).setView([49.2127168, 9.3962733], 10);
+
+    map_object.touchZoom.disable();
+    map_object.doubleClickZoom.disable();
+    map_object.scrollWheelZoom.disable();
+    map_object.keyboard.disable();
 
     var sublayers = [];
 
